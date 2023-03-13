@@ -81,43 +81,53 @@ void serialEvent() {
 
 
 
-                            case 2:  // your hand is close to the sensor
+                            case 2: 
                               Serial.println("RELAY 5 PENDIDO");
                               digitalWrite(Pines[4], HIGH);
                               break;
-                            case 3:  // your hand is a few inches from the sensor
+                            case 3:  
                               Serial.println("RELAY 6 PENDIDO");
                               digitalWrite(Pines[5], HIGH);
                               break;
-                            case 4:  // your hand is nowhere near the sensor
+                            case 4:  
                               Serial.println("RELAY 7 PENDIDO");
                               digitalWrite(Pines[6], HIGH);
                               break;
-                            case 5:  // your hand is nowhere near the sensor
+                            case 5: 
                               Serial.println("RELAY 8 PENDIDO");
                               digitalWrite(Pines[7], HIGH);
                               break;
 
-                            case 6:  // your hand is close to the sensor
+
+
+                            case 6:  
                               Serial.println("RELAY 5 APAGADO");
                               digitalWrite(Pines[4], LOW);
                               break;
-                            case 7:  // your hand is a few inches from the sensor
+                            case 7: 
                               Serial.println("RELAY 6 APAGADO");
                               digitalWrite(Pines[5], LOW);
                               break;
-                            case 8:  // your hand is nowhere near the sensor
+                            case 8: 
                               Serial.println("RELAY 7 APAGADO");
                               digitalWrite(Pines[6], LOW);
                               break;
-                            case 9:  // your hand is nowhere near the sensor
+                            case 9:  
                               Serial.println("RELAY 8 APAGADO");
                               digitalWrite(Pines[7], LOW);
                               break;
-                            case -1:  // your hand is nowhere near the sensor
+                            case -1:  
                               Serial.println("APAGA TODO");
                               Pone_todo_cero();
                               break;  
+                            case -2:  
+                              Serial.println("Power on reset");
+                              digitalWrite(Pines[2], LOW);//fuente
+                              digitalWrite(Pines[3], LOW);
+                              delay(3000);
+                              digitalWrite(Pines[3], HIGH);//fuente
+                              digitalWrite(Pines[2], HIGH);  
+                              break; 
 
 
                               
